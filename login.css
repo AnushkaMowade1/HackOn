@@ -1,0 +1,91 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #3e2723;
+    color: #d7ccc8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .login-container {
+    background-color: #5d4037;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+    color: #efebe9;
+  }
+  
+  .input-container {
+    position: relative;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #efebe9;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #a1887f;
+    border-radius: 5px;
+    background-color: #4e342e;
+    color: #fff;
+    outline: none;
+  }
+  
+  input::placeholder {
+    color: #bcaaa4;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 10px;
+    top: 35px;
+    font-size: 16px;
+    color: #bcaaa4;
+  }
+  
+  button {
+    width: 100%;
+    background-color: #795548;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition:  0.3s;
+  }
+  
+  button:hover {
+    background-color: #6d4c41;
+  }
+  
+  .redirect-link {
+    margin-top: 1rem;
+    font-size: 14px;
+  }
+  
+  .redirect-link a {
+    color: #ffccbc;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .redirect-link a:hover {
+    text-decoration: underline;
+  }
+  

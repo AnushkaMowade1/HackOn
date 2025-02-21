@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historical Insights</title>
+    <title>CHRONOQUEST</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,43 +12,49 @@
 </head>
 <body>
     <header>
-        <div class="logo">History</div>
+        <div class="logo">CHRONOQUEST</div>
         <nav>
             <ul>
-                <li><a href="">Login</a></li>
-                <li><a href="">Sign Up</a></li>
-                <li><button class="mock-test">MOCK TEST</button></li>
+                <li><a href="./login.html">Login</a></li>
+                <li><a href="./signup.html">SignUp</a></li>
+                <li><a href="/quest/delquet.html"><button class="mock-test">Quest</button></a></li>
             </ul>
         </nav>
     </header>
     
     <section class="welcome">
-        <h1>WELCOME !</h1>
-        <p><b>Step Into the Past-</b> Unravel the Stories That Shaped History!</p>
-        <button class="start-btn">LET'S START</button>
+        <div class="overlay">
+            <h1>WELCOME !</h1>
+            <p><b>Step Into the Past –</b> Unravel the Stories That Shaped History!</p>
+            <a href="/quest/mugquest.html"><button class="start-btn">LET'S START</button></a>
+        </div>
     </section>
     
     <section class="hero-image">
-        <img src="hero-image.jpg" alt="Hero Image">
+        <img src="/EARLY MH/img/" alt="Hero Image">
     </section>
     
+    
     <section class="content">
-        <h2>Unfolding the Past</h2>
+        <h2><b>Unfolding the Past</b></h2>
+        <div class="article">   <a href="">
+            <img src="/images/anind.jpg" alt="Rise of Rajput">
+            <h3>Ancient India</h3>
+            <p>A civilization of grandeur and mystery, Ancient Egypt thrived along the Nile, leaving behind pyramids, pharaohs, and a legacy of innovation.</p></a>
+        </div>
         <div class="articles">
-            <div class="article">
-                <img src="image1.jpg" alt="Early Medieval India">
-                <h3>EARLY MEDIEVAL INDIA</h3>
-                <p>Witness the Clash of Dynasties and the Dawn of a New Era in Early Medieval India!</p>
+            <a href="./EARLY MH/med.html">
+            <div class="article" >
+                <img src="/images/th.jpg" alt="Early Medieval India">
+                <h3>MEDIEVAL INDIA</h3>
+                <p>Witness the Clash of Dynasties and the Dawn of a New Era in Early Medieval India!</p></a>
             </div>
+         
             <div class="article">
-                <img src="image2.jpg" alt="Rise of Rajput">
-                <h3>Ancient Egypt</h3>
-                <p>A civilization of grandeur and mystery, Ancient Egypt thrived along the Nile, leaving behind pyramids, pharaohs, and a legacy of innovation.</p>
-            </div>
-            <div class="article">
-                <img src="image3.jpg" alt="Provincial Kingdoms">
-                <h3>The Renaissance</h3>
-                <p>Power Shifts and New Thrones – The Rise of Provincial Kingdoms!</p>
+                <a href="">
+                <img src="/images/modind.jpg" alt="Provincial Kingdoms">
+                <h3>MODERN HISTORY</h3>
+                <p>Power Shifts and New Thrones – The Rise of Provincial Kingdoms!</p></a>
             </div>
         </div>
     </section>
@@ -59,4 +65,7 @@
         });
     </script>
 </body>
+<footer>
+    
+</footer>
 </html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Luxury Watches</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./login.css">
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="input-container">
+          <label for="username">Username</label>
+          <i class="input-icon">💬</i>
+          <input type="text" id="username" placeholder="Enter your username" required />
+        </div>
+
+        <div class="input-container">
+          <label for="password">Password</label>
+          <i class="input-icon">🔒</i>
+          <input type="password" id="password" placeholder="Enter your password" required />
+        </div>
+
+        <button type="submit">Login</button>
+
+        <div class="redirect-link">
+          <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      window.onload = function () {
+        const loggedInUser = sessionStorage.getItem("loggedInUser");
+        if (loggedInUser) {
+          const redirectTo = sessionStorage.getItem('redirectTo') || 'index.html';
+          window.location.href = redirectTo;
+        }
+      };
+
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const username = document.getElementById("username").value.trim();
+          const password = document.getElementById("password").value.trim();
+
+          const user = localStorage.getItem(username);
+          if (!user) {
+            alert("User does not exist. Please Sign Up.");
+            return;
+          }
+
+          const userData = JSON.parse(user);
+
+          if (userData.password !== password) {
+            alert("Incorrect password. Please try again.");
+            return;
+          }
+
+          sessionStorage.setItem("loggedInUser", username);
+
+          alert("Login successful!");
+
+          const redirectTo = sessionStorage.getItem('redirectTo') || 'index.html'; 
+          sessionStorage.removeItem('redirectTo'); 
+          window.location.href = redirectTo; 
+        });
+    </script>
+  </body>
+</html>
