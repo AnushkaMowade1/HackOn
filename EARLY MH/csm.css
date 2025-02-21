@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
     font-family: "Alegreya", serif;
     background-color: #1a1a1a;
@@ -8,7 +8,6 @@ body {
     text-align: center;
 }
 
-/* Header Styling */
 header {
     background: linear-gradient(to right, #4a2c2a, #2e1b17);
     padding: 30px 10px;
@@ -31,7 +30,6 @@ header p {
     100% { text-shadow: 0 0 20px #ff6600; }
 }
 
-/* Section Styling */
 section {
     padding: 40px;
     margin: 20px auto;
@@ -46,7 +44,7 @@ section h2 {
     text-shadow: 2px 2px 6px rgba(255, 204, 0, 0.8);
 }
 
-/* Timeline */
+
 .timeline .event {
     background: rgba(255, 204, 0, 0.1);
     padding: 15px;
@@ -57,7 +55,6 @@ section h2 {
     font-size: 18px;
 }
 
-/* Photo Gallery */
 .gallery {
     display: flex;
     justify-content: center;
@@ -78,7 +75,6 @@ gallery img:hover {
     box-shadow: 0 0 15px #ffcc00;
 }
 
-/* Quiz Styling */
 .quiz button {
     background-color: #ffcc00;
     color: #1a1a1a;
@@ -96,7 +92,7 @@ gallery img:hover {
     color: white;
 }
 
-/* List Sections */
+
 ul {
     list-style: none;
     padding: 0;
@@ -111,7 +107,6 @@ ul li {
     text-align: left;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 768px) {
     section {
         width: 90%;
