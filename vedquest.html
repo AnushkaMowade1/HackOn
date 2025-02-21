@@ -1,0 +1,62 @@
+<script>
+    const questions = [
+        { question: "When did the Vedic period last from?", options:["Early Vedic and Middle Vedic","Middle Vedic and Later Vedic","Early Vedic and Later Vedic","Rigvedic and Post-Rigvedic"], answer:"Early Vedic and Later Vedic" },
+
+        { question: "Which is the oldest and most important Veda?", options:["Yajurveda","Samaveda","Atharvaveda","Rigveda"], answer:"Rigveda" },
+
+        { question: "Which Veda contains sacrificial formulas and rituals?", options:["Yajurveda","Samaveda","Rigveda","Atharvaveda"], answer:"Yajurveda" },
+
+        { question: "What was the basis of Vedic texts?", options:["Prakrit","Pali","Sanskrit","Tamil"], answer:"Sanskrit" },
+
+        { question: "Which texts were written apart from the Vedas during the Vedic period?", options:["Epics and Puranas","Brahmanas, Aranyakas, and Upanishads","Smritis and Sutras","Jain and Buddhist texts"], answer:"Brahmanas, Aranyakas, and Upanishads" } // Fixed incorrect answer
+    ];
+
+    let currentQuestionIndex = 0;
+    let correctAnswers = 0;
+
+    function loadQuestion() {
+        if (currentQuestionIndex < questions.length) {
+            const q = questions[currentQuestionIndex];
+            document.getElementById('question-container').innerText = q.question;
+            document.getElementById('options-container').innerHTML = q.options.map(option => 
+                `<button onclick="checkAnswer('${option}')">${option}</button>`
+            ).join('');
+            document.getElementById('progress-container').innerText = `Level ${currentQuestionIndex + 1} out of ${questions.length} completed.`;
+        } else {
+            showCelebration();
+        }
+    }
+
+    function checkAnswer(selectedOption) {
+        if (selectedOption === questions[currentQuestionIndex].answer) {
+            correctAnswers++;
+            document.getElementById('tick-mark').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('tick-mark').style.display = 'none';
+                currentQuestionIndex++;
+                loadQuestion();
+            }, 1000);
+        } else {
+            currentQuestionIndex++;
+            loadQuestion();
+        }
+    }
+
+    function showCelebration() {
+        document.getElementById('game-container').style.display = 'none';
+        for (let i = 0; i < 10; i++) {
+            let cracker = document.createElement('div');
+            cracker.classList.add('cracker');
+            cracker.innerHTML = '🎉';
+            cracker.style.left = Math.random() * 100 + 'vw';
+            cracker.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            document.getElementById('cracker-container').appendChild(cracker);
+        }
+        setTimeout(() => {
+            document.getElementById('correct-count').innerText = correctAnswers;
+            document.getElementById('popup').style.display = 'block';
+        }, 2000);
+    }
+
+    loadQuestion();
+</script>

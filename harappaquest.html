@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harappa Quest Game</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .game-container {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .question {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .options button {
+            display: block;
+            margin: 10px auto;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            background: #ffcc00;
+            color: black;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .options button:hover {
+            background: #ff9900;
+        }
+        .tick {
+            color: limegreen;
+            font-size: 24px;
+            display: none;
+        }
+        .cracker {
+            display: none;
+            font-size: 50px;
+            position: absolute;
+            top: -50px;
+            animation: fall 2s linear forwards;
+        }
+        .progress {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .popup a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: gold;
+            color: black;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        @keyframes fall {
+            from { top: -50px; }
+            to { top: 100vh; }
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container" class="game-container">
+        <h1>Quest Game</h1>
+        <div id="question-container" class="question"></div>
+        <div id="options-container" class="options"></div>
+        <div id="tick-mark" class="tick">✔</div>
+        <div id="progress-container" class="progress"></div>
+        <div id="cracker-container"></div>
+    </div>
+    <div id="popup" class="popup">
+        <h2>Congratulations! 🎉</h2>
+        <p>You have completed the quest!</p>
+        <p>You answered <span id="correct-count"></span> questions correctly!</p>
+        <a href="reward.html">Collect Reward</a>
+    </div>
+    <script>
+        const questions = [
+            { question: "Who founded the Maurya Empire?", options:["Ashoka the Great","Chandragupta Maurya","Samudragupta","Chandragupta II"], answer:"Chandragupta Maurya"},
+            { question: "What significant cultural shift did Ashoka the Great embrace after the Kalinga War?", options:["Jainism","Hinduism","Buddhism","Islam"], answer:"Buddhism"},
+            { question: 'Which empire is often referred to as the "Golden Age" of India?', options:["Maurya Empire","Chola Empire","Gupta Empire","Mughal Empire"], answer:"Gupta Empire"},
+            { question: "What was the capital of the Gupta Empire?", options:["Delhi","Pataliputra (modern Patna)","Agra","Varanasi"], answer:"Pataliputra (modern Patna)"},
+            { question: "Which empire was known for its naval power and extensive trade in the Indian Ocean?", options:["Maurya Empire","Gupta Empire","Chola Empire","Mughal Empire"], answer:"Chola Empire"}
+        ];
+
+        let currentQuestionIndex = 0;
+        let correctAnswers = 0;
+
+        function loadQuestion() {
+            if (currentQuestionIndex < questions.length) {
+                const q = questions[currentQuestionIndex];
+                document.getElementById('question-container').innerText = q.question;
+                document.getElementById('options-container').innerHTML = q.options.map(option => 
+                    `<button onclick="checkAnswer('${option}')">${option}</button>` // Fixed template literal
+                ).join('');
+                document.getElementById('progress-container').innerText = `Level ${currentQuestionIndex + 1} out of ${questions.length} completed.`; // Fixed string template
+            } else {
+                showCelebration();
+            }
+        }
+
+        function checkAnswer(selectedOption) {
+            if (selectedOption === questions[currentQuestionIndex].answer) {
+                correctAnswers++;
+                document.getElementById('tick-mark').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('tick-mark').style.display = 'none';
+                    currentQuestionIndex++;
+                    loadQuestion();
+                }, 1000);
+            } else {
+                currentQuestionIndex++;
+                loadQuestion();
+            }
+        }
+
+        function showCelebration() {
+            document.getElementById('game-container').style.display = 'none';
+            for (let i = 0; i < 10; i++) {
+                let cracker = document.createElement('div');
+                cracker.classList.add('cracker');
+                cracker.innerHTML = '🎉';
+                cracker.style.left = Math.random() * 100 + 'vw';
+                cracker.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                document.getElementById('cracker-container').appendChild(cracker);
+            }
+            setTimeout(() => {
+                document.getElementById('correct-count').innerText = correctAnswers;
+                document.getElementById('popup').style.display = 'block';
+            }, 2000);
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>

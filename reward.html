@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rise of Rajput - Reward</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.5"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #8B0000, #FFD700);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .reward-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        .reward-container:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            font-size: 32px;
+        }
+        p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .next-button {
+            background: gold;
+            color: black;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .next-button:hover {
+            background: #FFD700;
+        }
+        .treasure-box {
+            margin-top: 20px;
+            cursor: pointer;
+            width: 120px;
+            transition: transform 0.3s;
+        }
+        .treasure-box:hover {
+            transform: scale(1.1);
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
+            z-index: 10;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .popup img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+        .popup button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: gold;
+            color: black;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .popup button:hover {
+            background: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <div class="reward-container">
+        <h1>Congratulations, Warrior! 🎖</h1>
+        <p>You have unlocked the knowledge of the Rise of Rajputs.</p>
+        <p>Discover their valor, courage, and the rich history of their kingdoms.</p>
+        <p>Click the treasure box to reveal your reward!</p>
+        <img src="https://cdn-icons-png.flaticon.com/512/6792/6792397.png" alt="Treasure Box" class="treasure-box" onclick="showPopup()">
+    </div>
+    <div id="popup" class="popup">
+        <h2>🎊 FOUND TREASURE! 🎊</h2>
+        <p>You have earned the <strong>Rajput Knight’s Crown</strong>! 🏆</p>
+        <img src="https://cdn-icons-png.flaticon.com/512/1048/1048940.png" alt="Trophy">
+        <button onclick="closePopup()">Collect</button>
+        <a href="mughal-empire.html" class="next-button">Proceed to Mughal Empire</a>
+    </div>
+    <audio id="rewardSound" src="https://www.fesliyanstudios.com/play-mp3/4382" preload="auto"></audio>
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('rewardSound').play();
+            launchConfetti();
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function launchConfetti() {
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    confetti({
+                        particleCount: 100,
+                        spread: 70,
+                        origin: { y: 0.6 }
+                    });
+                }, i * 500);
+            }
+        }
+    </script>
+</body>
+</html>
