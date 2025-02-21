@@ -1,0 +1,133 @@
+
+body {
+    font-family: "Alegreya", serif;
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar {
+    background-color: #4a2c2a;
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f4d03f;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ffcc00;
+    text-shadow: 0 0 10px #f0eee6;
+}
+
+
+.main {
+    text-align: center;
+    padding: 50px;
+}
+
+.main h1 {
+    font-size: 45px;
+    font-weight: bold;
+    text-shadow: 4px 4px 10px rgba(206, 204, 189, 0.8);
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #ffcc00; }
+    100% { text-shadow: 0 0 20px #a28b7c; }
+}
+
+marquee {
+    font-size: 18px;
+    color: #ffdd57;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 50px;
+}
+
+.card {
+    background-color: #332222;
+    padding: 20px;
+    width: 280px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #ffcc00;
+    box-shadow: 0 4px 8px rgba(255, 204, 0, 0.6);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.card h3 {
+    color: #f4d03f;
+}
+
+.card p {
+    font-size: 16px;
+    color: #ddd;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ffcc00;
+}
+
+.list {
+    text-align: center;
+    padding: 40px;
+}
+
+.list h1 {
+    font-size: 35px;
+    color: #ffcc00;
+}
+
+.list p {
+    font-size: 18px;
+    width: 60%;
+    margin: auto;
+    line-height: 1.5;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list p {
+        width: 90%;
+    }
+}
+a{
+    text-decoration: none;
+    color:white; 
+ }

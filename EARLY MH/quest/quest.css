@@ -1,0 +1,80 @@
+body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .game-container {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .question {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .options button {
+            display: block;
+            margin: 10px auto;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            background: #ffcc00;
+            color: black;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .options button:hover {
+            background: #ff9900;
+        }
+        .tick {
+            color: limegreen;
+            font-size: 24px;
+            display: none;
+        }
+        .cracker {
+            display: none;
+            font-size: 50px;
+            position: absolute;
+            top: -50px;
+            animation: fall 2s linear forwards;
+        }
+        .progress {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .popup a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: gold;
+            color: black;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        @keyframes fall {
+            from { top: -50px; }
+            to { top: 100vh; }
+        }
+    
