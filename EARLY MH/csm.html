@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chhatrapati Shivaji Maharaj - Explore His Legacy</title>
+    <link rel="stylesheet" href="csm.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Chhatrapati Shivaji Maharaj </h1>
+        <p>Embark on an interactive journey through the life and legacy of the Maratha warrior king.</p>
+    </header>
+    
+    <section class="intro">
+        <h2>Who Was  Shivaji Maharaj?</h2>
+        <p>Chhatrapati Shivaji Maharaj (1630-1680) was the founder of the Maratha Empire, known for his military brilliance, administrative genius, and unwavering spirit of Swarajya (self-rule).</p>
+    </section>
+    
+    <section class="timeline">
+        <h2>📜 Timeline of His Life</h2>
+        <div class="event">⚔️ <strong>1630:</strong> Born in Shivneri Fort</div>
+        <div class="event">🏰 <strong>1645:</strong> First conquest – Capture of Torna Fort</div>
+        <div class="event">⚖️ <strong>1674:</strong> Coronation as Chhatrapati at Raigad Fort</div>
+        <div class="event">🔥 <strong>1680:</strong> Passed away, leaving behind an immortal legacy</div>
+    </section>
+    
+    <section class="photo-gallery">
+        <h2>📷 Explore the Legacy</h2>
+        <div class="gallery">
+            <img src="shiv.jpg" alt="Shivaji Maharaj in battle">
+            <img src="raigad.jpg" alt="Raigad Fort">
+            <img src="shivaji3.jpg" alt="Shivaji's coronation">
+        </div>
+    </section>
+    
+    <section class="quiz">
+        <h2>🎮 Test Your Knowledge!</h2>
+        <p>What year was Shivaji Maharaj crowned as Chhatrapati?</p>
+        <button onclick="checkAnswer(1674)">1674</button>
+        <button onclick="checkAnswer(1665)">1665</button>
+        <button onclick="checkAnswer(1680)">1680</button>
+        <p id="result"></p>
+    </section>
+    
+    <section class="battles">
+        <h2>⚔️ Famous Battles of Shivaji Maharaj</h2>
+        <ul>
+            <li><strong>Battle of Pratapgad (1659):</strong> Defeated Afzal Khan and established Maratha strength.</li>
+            <li><strong>Battle of Pavan Khind (1660):</strong> A heroic last stand led by Baji Prabhu Deshpande.</li>
+            <li><strong>Battle of Surat (1664):</strong> A strategic raid that weakened Mughal finances.</li>
+            <li><strong>Battle of Sinhagad (1670):</strong> A daring capture led by Tanaji Malusare.</li>
+        </ul>
+    </section>
+    
+    <section class="forts">
+        <h2>🏰 The Mighty Forts of Shivaji Maharaj</h2>
+        <p>Shivaji Maharaj built and strengthened numerous forts that played crucial roles in his empire's defense.</p>
+        <div class="gallery">
+            <img src="raigad.jpg" alt="Raigad Fort - Shivaji's Capital">
+            <img src="sinhagad.jpg" alt="Sinhagad Fort - A Symbol of Bravery">
+            <img src="pratapgad.jpg" alt="Pratapgad Fort - Battle Against Afzal Khan">
+        </div>
+    </section>
+    
+    <section class="administration">
+        <h2>📜 Shivaji Maharaj’s Administration</h2>
+        <p>Shivaji Maharaj was a visionary ruler with a well-organized administration:</p>
+        <ul>
+            <li><strong>Asthapradhan Council:</strong> A group of eight ministers handling key governance aspects.</li>
+            <li><strong>Revenue System:</strong> Focused on fair taxation and farmers' welfare.</li>
+            <li><strong>Navy:</strong> Established a strong naval force to protect the coastline.</li>
+            <li><strong>Military Strategy:</strong> Introduced guerrilla warfare tactics for swift victories.</li>
+        </ul>
+    </section>
+    
+    <script>
+        function checkAnswer(year) {
+            let result = document.getElementById("result");
+            if (year === 1674) {
+                result.innerHTML = "✅ Correct! Shivaji Maharaj was crowned in 1674.";
+                result.style.color = "green";
+            } else {
+                result.innerHTML = "❌ Wrong answer. Try again!";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
